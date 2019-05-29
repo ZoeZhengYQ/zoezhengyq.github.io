@@ -6,15 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: template | ZoeZheng Blog</title>
+  <title>Java常见问题汇总 | ZoeZheng Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="ZoeZheng Blog">
-<meta property="og:url" content="http://yoursite.com/tags/template/index.html">
+  <meta name="description" content="Copied from 500 Java / J2EE Interview Questions and Answers   Can we reduce the visibility of the overridden method?  no.   ✨What are different types of inner classes?  Nested Inner Class  Can access">
+<meta name="keywords" content="学习,java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java常见问题汇总">
+<meta property="og:url" content="http://yoursite.com/2019/05/30/java_interview_qa/index.html">
 <meta property="og:site_name" content="ZoeZheng Blog">
+<meta property="og:description" content="Copied from 500 Java / J2EE Interview Questions and Answers   Can we reduce the visibility of the overridden method?  no.   ✨What are different types of inner classes?  Nested Inner Class  Can access">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-05-29T16:22:01.948Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ZoeZheng Blog">
+<meta name="twitter:title" content="Java常见问题汇总">
+<meta name="twitter:description" content="Copied from 500 Java / J2EE Interview Questions and Answers   Can we reduce the visibility of the overridden method?  no.   ✨What are different types of inner classes?  Nested Inner Class  Can access">
   
     <link rel="alternative" href="/atom.xml" title="ZoeZheng Blog" type="application/atom+xml">
   
@@ -132,64 +137,428 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-java_interview_qa" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/05/29/hello-world/" class="archive-article-date">
-  	<time datetime="2019-05-29T07:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-29</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/29/hello-world/">Hello World</a>
+    <h1 class="article-title" itemprop="name">
+      Java常见问题汇总
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2019/05/30/java_interview_qa/" class="archive-article-date">
+  	<time datetime="2019-05-29T16:12:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-30</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Copied from <a href="https://www.buggybread.com/2014/04/200-java-j2ee-interview-questions-and.html" target="_blank" rel="noopener">500 Java / J2EE Interview Questions and Answers</a></p>
+<hr>
+<ol>
+<li><p>Can we reduce the visibility of the overridden method?</p>
+<blockquote>
+<p>no.</p>
+</blockquote>
+</li>
+<li><p>✨What are different types of inner classes?</p>
+<blockquote>
+<p>Nested Inner Class</p>
+<ul>
+<li>Can access any private instance of outer class</li>
+</ul>
+<p>Method Local Inner Class</p>
+<ul>
+<li>Be declared within a method of outer class</li>
+<li>Can only access outer method <strong>final</strong> value</li>
+</ul>
+<p>Anonymous Inner Class<br>Static Nested Inner Class</p>
+</blockquote>
+</li>
+</ol>
+<a id="more"></a>
+<ol start="3">
+<li><p>✨Difference between TreeMap and HashMap?</p>
+<blockquote>
+<p>They are different the way they are stored in memory.<br>TreeMap stores the <strong>Keys in order</strong> whereas HashMap stores the <strong>key value pairs randomly</strong>.</p>
+</blockquote>
+</li>
+<li><p>✨What’s the difference between List, Set and Map?</p>
+<blockquote>
+<p><strong>List</strong> - Members are stored in sequence in memory and can be accessed through index.<br><strong>Set</strong> - There is no relevance of sequence and index. Sets doesn’t contain duplicates whereas multiset can have duplicates.<br><strong>Map</strong> - Contains Key , Value pairs.  </p>
+</blockquote>
+</li>
+<li><p>✨Difference between Public, Private, Default and Protected?</p>
+<blockquote>
+<p><strong>Private</strong> - Not accessible outside object scope.<br><strong>Public</strong> - Accessible from anywhere.<br><strong>Default</strong> - Accessible from anywhere within same package.<br><strong>Protected</strong> - Accessible from object and the sub class objects. </p>
+</blockquote>
+</li>
+<li><p>What are the Wrapper classes available for primitive types ?</p>
+<blockquote>
+<p>boolean - <code>java.lang.Boolean</code><br>byte - <code>java.lang.Byte</code><br>char - <code>java.lang.Character</code><br>double - <code>java.lang.Double</code><br>float - <code>java.lang.Float</code><br>int - <code>java.lang.Integer</code><br>long - <code>java.lang.Long</code><br>short - <code>java.lang.Short</code><br>void - <code>java.lang.Void</code></p>
+</blockquote>
+</li>
+<li><p>✨What are concepts introduced with Java 5?</p>
+<blockquote>
+<p>Generics, Enums, Autoboxing, Annotations and Static Import. </p>
+</blockquote>
+</li>
+<li><p>✨Does Constructor creates the object?</p>
+<blockquote>
+<p><code>New</code> operator in Java creates objects. Constructor is the later step in object creation.<br>Constructor’s job is to initialize the members after the object has reserved memory for itself. </p>
+</blockquote>
+</li>
+<li><p>✨Can static method access instance variables?</p>
+<blockquote>
+<p>Though Static methods <strong>cannot access the instance variables directly</strong>, They can access them using instance handler. </p>
+</blockquote>
+</li>
+<li><p>Does Java support Multiple Inheritance?</p>
+<blockquote>
+<p>Interfaces does’t facilitate inheritance and hence implementation of multiple interfaces doesn’t make multiple inheritance. Java doesn’t support multiple inheritance. </p>
+</blockquote>
+</li>
+<li><p>✨Difference between == and .equals()?</p>
+<blockquote>
+<p><code>equals</code> is the member of object class which returns true if the content of objects are same whereas <code>==</code> evaluate to see if the object handlers on the left and right are pointing to the same object in memory. (i.e. <code>==</code> compare object reference)</p>
+</blockquote>
+</li>
+<li><p>✨Difference between Checked and Unchecked exceptions?</p>
+<blockquote>
+<p>Checked exceptions and the exceptions for which compiler throws an errors if they are not checked whereas unchecked exceptions and caught <strong>during run time only</strong> and hence can’t be checked.<br>So unchecked exception is RuntimeException</p>
+</blockquote>
+</li>
+<li><p>✨Which class does not override the equals() and hashCode() methods, inheriting them directly from class Object?</p>
+<blockquote>
+<p><code>java.lang.StringBuffer</code></p>
+</blockquote>
+</li>
+<li><p>✨What is a final method?</p>
+<blockquote>
+<p>Its a method which cannot be overridden. Compiler throws an error if we try to override a method which has been declared final in the parent class. </p>
+</blockquote>
+</li>
+<li><p>Which interface does java.util.Hashtable implement?</p>
+<blockquote>
+<p><code>java.util.Map</code></p>
+</blockquote>
+</li>
+<li><p>What is an iterator?</p>
+<blockquote>
+<p>Iterator is an interface that provides methods to iterate over any Collection. </p>
+</blockquote>
+</li>
+<li><p>✨Difference between HashMap and Hashtable?</p>
+<blockquote>
+<p>Hashtable is synchronized whereas HashMap is not.<br>HashMap allows null values whereas Hashtable doesn’t allow null values.</p>
+</blockquote>
+</li>
+<li><p>✨Does java allow overriding static methods?</p>
+<blockquote>
+<p>No. Static methods belong to the class and not the objects. They belong to the class and hence doesn’t fit properly for the polymorphic behavior. </p>
+</blockquote>
+</li>
+<li><p>When are static variables loaded in memory? </p>
+<blockquote>
+<p>They are loaded at runtime when the respective Class is loaded. </p>
+</blockquote>
+</li>
+<li><p>Can we serialize static variables?</p>
+<blockquote>
+<p>No. Only Object and its members are serialized. Static variables are shared variables and doesn’t correspond to a specific object. </p>
+</blockquote>
+</li>
+<li><p>✨There are two objects a and b with same hashcode. I am inserting these two objects inside a hashmap. How many objects will be there inside the hashmap?<br><code>hMap.put(a,a);</code><br><code>hMap.put(b,b);</code><br>where <code>a.hashCode()==b.hashCode()</code></p>
+<blockquote>
+<p>There can be two different elements with the same hashcode. When two elements have the same hashcode then Java uses the equals to further differentation. So there can be one or two objects depending on the content of the objects. </p>
+</blockquote>
+</li>
+<li><p>✨Difference between long.Class and Long.TYPE?</p>
+<blockquote>
+<p>They both represent the long primitive type. They are exactly the same. </p>
+</blockquote>
+</li>
+<li><p>Does Java provides default copy constructor?</p>
+<blockquote>
+<p>No.</p>
+</blockquote>
+</li>
+<li><p>✨What are the common uses of “this” keyword in java? </p>
+<blockquote>
+<p><code>this</code> keyword is a reference to the current object and can be used for following: </p>
+<ol>
+<li>Passing itself to another method.</li>
+<li>Referring to the instance variable when local variable has the same name.</li>
+<li>Calling another constructor in constructor chaining.</li>
+</ol>
+</blockquote>
+</li>
+<li><p>✨What are the difference between Threads and Processes? </p>
+<blockquote>
+<ol>
+<li>when an OS wants to start running program it creates new process means a process is a program that is currently executing and every process has at least one thread running within it.</li>
+<li>A thread is a path of code execution in the program, which has its own local variables, program counter (pointer to current execution being executed) and lifetime.</li>
+<li>When the JavaVirtual Machine (JavaVM, or just VM) is started by the operating system, a new process is created. Within that process, many threads can be created.</li>
+<li>Consider an example : when you open Microsoft word in your OS and you check your task manger then you can see this running program as a process. now when you write something in opened word document, then it performs more than one work at same time like it checks for the correct spelling, it formats the word you enter , so within that process ( word) , due to different path execution(thread) all different works are done at same time.</li>
+<li>Within a process , <em>every thread has independent path of execution</em> but there may be situation where two threads can interfere with each other then concurrency and deadlock come is picture.</li>
+<li>like two process can communicate ( open an word document and file explorer and on word document you drag and drop another another file from file explorer), same way two threads can also communicate with each other and communication with two threads is relatively low.</li>
+<li>Every thread in java is created and controlled by unique object of java.lang.Thread class.</li>
+<li>prior to jdk 1.5, there were lack in support of asynchronous programming in java, so in that case it was considered that thread makes the runtime environment asynchronous and allow different task to perform concurrently.  </li>
+</ol>
+</blockquote>
+</li>
+<li><p>How can we run a java program without making any object?</p>
+<blockquote>
+<p>By putting code within either static method or static block. </p>
+</blockquote>
+</li>
+<li><p>Explain multithreading in Java?</p>
+<blockquote>
+<ol>
+<li>Multithreading provides better interaction with the user by distribution of task</li>
+<li>Threads in Java appear to run concurrently, so it provides simulation for simultaneous activities.<br>The processor runs each thread for a short time and switches among the threads to simulate simultaneous execution (context-switching) and it make appears that each thread has its own processor. By using this feature, users can make it appear as if multiple tasks are occurring simultaneously when, in fact, each is running for only a brief time before the context is switched to the next thread.</li>
+<li>We can do other things while waiting for slow I/O operations. In the <code>java.io</code> package, the class <code>InputStream</code>has a method, read(), that blocks until a byte is read from the stream or until an <code>IOException</code> is thrown. The thread that executes this method cannot do anything else while awaiting the arrival of another byte on the stream.</li>
+</ol>
+</blockquote>
+</li>
+<li><p>Can constructors be synchronized in Java?</p>
+<blockquote>
+<p>No. Java doesn’t allow multi thread access to object constructors so synchronization is not even needed. </p>
+</blockquote>
+</li>
+<li><p>Can we create a null as a key for a map collection? </p>
+<blockquote>
+<p>Yes , for Hashtable. Hashtable implements Map interface. </p>
+</blockquote>
+</li>
+<li><p>What is the use of hashcode in Java?</p>
+<blockquote>
+<p>Hashcode is used for bucketing in Hash implementations like <code>HashMap</code>, <code>HashTable</code>, <code>HashSet</code> etc. The value received from hashcode() is used as bucket number for storing elements. This bucket number is the address of the element inside the set/map. when you do contains() then it will take the hashcode of the element, then look for the bucket where hashcode points to and if more than 1 element is found in the same bucket (multiple objects can have the same hashcode) then it uses the <code>equals()</code> method to evaluate if object are equal, and then decide if contain() is true or false, or decide if element could be added in the set or not. </p>
+</blockquote>
+</li>
+<li><p>Why java doesn’t support multiple Inheritence? </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">test</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"test() method"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">test</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"test() method"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// Suppose if Java allows multiple inheritance like this,</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">C</span> <span class="keyword">extends</span> <span class="title">B</span> </span>&#123;</span><br><span class="line">	...</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// A and B test() methods are inheriting to C class.</span></span><br><span class="line"><span class="comment">// As A &amp; B class test() methods are different , So here we would Facing Ambiguity.</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Why threads block or enters to waiting state on I/O?</p>
+<blockquote>
+<p>Threads enters to waiting state or block on I/O because other threads can execute while the I/O operations are performed. </p>
+</blockquote>
+</li>
+<li><p>What are transient variables in java?</p>
+<blockquote>
+<p>Transient variables are variable that cannot be serialized. </p>
+</blockquote>
+</li>
+<li><p>What is the difference between yield() and sleep()?</p>
+<blockquote>
+<p>When a object invokes yield() it returns to ready state. But when an object invokes sleep() method enters to not ready state. </p>
+</blockquote>
+</li>
+<li><p>What are wrapper classes?</p>
+<blockquote>
+<p>They are wrappers to primitive data types. They allow us to access primitives as objects. </p>
+</blockquote>
+</li>
+<li><p>What is the difference between time slicing and preemptive scheduling? </p>
+<blockquote>
+<p>In preemptive scheduling, highest priority task continues execution till it enters a not running state or a higher priority task comes into existence.<br>In time slicing, the task continues its execution for a predefined period of time and reenters the pool of ready tasks. </p>
+</blockquote>
+</li>
+<li><p>What is the initial state of a thread when it is created and started?</p>
+<blockquote>
+<p>Ready state. </p>
+</blockquote>
+</li>
+<li><p>What one should take care of, while serializing the object?</p>
+<blockquote>
+<p>One should make sure that all the included objects are also serializable. If any of the objects is not serializable then it throws a NotSerializable Exception. </p>
+</blockquote>
+</li>
+<li><p>✨What is a String Pool? </p>
+<blockquote>
+<p>String pool (String intern pool) is a special storage area in Java heap. When a string is created and if the string already exists in the pool, the reference of the existing string will be returned, instead of creating a new object and returning its reference. </p>
+</blockquote>
+</li>
+<li><p>✨Why is String immutable in Java?</p>
+<blockquote>
+<ol>
+<li>String Pool<br>When a string is created and if the string already exists in the pool, the reference of the existing string will be returned, instead of creating a new object. If string is not immutable, changing the string with one reference will lead to the wrong value for the other references.</li>
+<li>To Cache its Hashcode<br>If string is not immutable, One can change its hashcode and hence not fit to be cached.</li>
+<li>Security<br>String is widely used as parameter for many java classes, e.g. network connection, opening files, etc. Making it mutable might possess threats due to interception by the other code segment.</li>
+</ol>
+</blockquote>
+</li>
+<li><p>✨Which are the different segments of memory?</p>
+<blockquote>
+<ol>
+<li>Stack Segment - contains local variables and Reference variables(variables that hold the address of an object in the heap)</li>
+<li>Heap Segment - contains all created objects in runtime, objects only plus their object attributes (instance variables)</li>
+<li>Code Segment - The segment where the actual compiled Java bytecodes resides when loaded </li>
+</ol>
+</blockquote>
+</li>
+<li><p>Can a lock be acquired on a class?</p>
+<blockquote>
+<p>Yes, a lock can be acquired on a class. This lock is acquired on the class’s Class object. </p>
+</blockquote>
+</li>
+<li><p>What state does a thread enter when it terminates its processing?</p>
+<blockquote>
+<p>When a thread terminates its processing, it enters the dead state. </p>
+</blockquote>
+</li>
+<li><p>How many bits are used to represent Unicode, ASCII, UTF-16, and UTF-8 characters?show Answer </p>
+<blockquote>
+<p>Unicode requires 16 bits and ASCII require 7 bits. Although the ASCII character set uses only 7 bits, it is usually represented as 8 bits. UTF-8 represents characters using 8, 16, and 18 bit patterns. UTF-16 uses 16-bit and larger bit patterns. </p>
+</blockquote>
+</li>
+<li><p>Does garbage collection guarantee that a program will not run out of memory?</p>
+<blockquote>
+<p>Garbage collection does <strong>not</strong> guarantee that a program will not run out of memory. It is possible for programs to use up memory resources faster than they are garbage collected. It is also possible for programs to create objects that are not subject to garbage collection.</p>
+</blockquote>
+</li>
+</ol>
+<p><strong>TO BE CONTINUED …</strong> </p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">学习</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">template</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/05/30/java_interview_qa/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2019/05/29/first-blog-record/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">我终于有自己的blog了！！</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    目录，不存在的…
+                    </div>
+                </span>
+            </div>
+        </div>
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -212,9 +581,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
