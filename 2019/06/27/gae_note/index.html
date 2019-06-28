@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>GAE学习笔记（一）———— Search API | ZoeZheng Blog</title>
+  <title>GAE学习笔记（一） Search API | ZoeZheng Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="因为公司的所有webapp都是放在Google App Engine(GAE)上面的，所以自然而然的就需要学习。">
+  <meta name="description" content="因为公司的所有webapp都是放在Google App Engine(GAE)上面的，所以自然而然的就需要学习。 Search API Overview Search API可以对数据进行类似标号的操作，所以我们可以通过Search API查找Datastore我们需要的数据。 数据存储的形式是我们首要了解的概念(我放弃用中文做这篇笔记的打算了，因为理解英语已经很难了:) ，翻译成中文简直太为难我">
 <meta name="keywords" content="Tech,GAE">
 <meta property="og:type" content="article">
-<meta property="og:title" content="GAE学习笔记（一）———— Search API">
+<meta property="og:title" content="GAE学习笔记（一） Search API">
 <meta property="og:url" content="http://yoursite.com/2019/06/27/gae_note/index.html">
 <meta property="og:site_name" content="ZoeZheng Blog">
-<meta property="og:description" content="因为公司的所有webapp都是放在Google App Engine(GAE)上面的，所以自然而然的就需要学习。">
+<meta property="og:description" content="因为公司的所有webapp都是放在Google App Engine(GAE)上面的，所以自然而然的就需要学习。 Search API Overview Search API可以对数据进行类似标号的操作，所以我们可以通过Search API查找Datastore我们需要的数据。 数据存储的形式是我们首要了解的概念(我放弃用中文做这篇笔记的打算了，因为理解英语已经很难了:) ，翻译成中文简直太为难我">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-06-28T03:49:11.089Z">
+<meta property="og:updated_time" content="2019-06-28T03:51:11.231Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="GAE学习笔记（一）———— Search API">
-<meta name="twitter:description" content="因为公司的所有webapp都是放在Google App Engine(GAE)上面的，所以自然而然的就需要学习。">
+<meta name="twitter:title" content="GAE学习笔记（一） Search API">
+<meta name="twitter:description" content="因为公司的所有webapp都是放在Google App Engine(GAE)上面的，所以自然而然的就需要学习。 Search API Overview Search API可以对数据进行类似标号的操作，所以我们可以通过Search API查找Datastore我们需要的数据。 数据存储的形式是我们首要了解的概念(我放弃用中文做这篇笔记的打算了，因为理解英语已经很难了:) ，翻译成中文简直太为难我">
   
     <link rel="alternative" href="/atom.xml" title="ZoeZheng Blog" type="application/atom+xml">
   
@@ -144,7 +144,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      GAE学习笔记（一）———— Search API
+      GAE学习笔记（一） Search API
     </h1>
   
 
@@ -158,7 +158,6 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>因为公司的所有webapp都是放在<a href="https://cloud.google.com/appengine/" target="_blank" rel="noopener">Google App Engine(GAE)</a>上面的，所以自然而然的就需要学习。</p>
-<a id="more"></a>
 <p><strong>Search API Overview</strong></p>
 <p>Search API可以对数据进行类似标号的操作，所以我们可以通过Search API查找Datastore我们需要的数据。</p>
 <p>数据存储的形式是我们首要了解的概念(我放弃用中文做这篇笔记的打算了，因为理解英语已经很难了:) ，翻译成中文简直太为难我了）：</p>
@@ -168,6 +167,9 @@
 <li>An object with unique ID + a list of fields</li>
 </ul>
 </li>
+</ul>
+<a id="more"></a>
+<ul>
 <li><p><strong>Indexes</strong></p>
 <ul>
 <li>Stores <code>documents</code> for retrieval. </li>
