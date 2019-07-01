@@ -21,7 +21,9 @@
 <meta property="og:image" content="http://yoursite.com/assets/blogImg/pg4/turtle.jpg">
 <meta property="og:image" content="http://yoursite.com/assets/blogImg/pg4/embrace.jpg">
 <meta property="og:image" content="http://yoursite.com/assets/blogImg/pg4/commits.png">
-<meta property="og:updated_time" content="2019-06-30T08:01:57.193Z">
+<meta property="og:image" content="http://yoursite.com/assets/blogImg/pg4/salvage.png">
+<meta property="og:image" content="http://yoursite.com/assets/blogImg/pg4/peco_all.png">
+<meta property="og:updated_time" content="2019-07-01T06:41:16.880Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="在PocketGems的第四周">
 <meta name="twitter:description" content="时间来到了第四周，终于开始觉得时间过得快了，一天的时间可以做很多事情，也可以一事无成。本周算是胆战心惊也是成就满满的一周，因为我的onboarding终于告一段落了。周末终于有机会去了San Diego（毕竟CA里面我只到过San Francisco），每次世界迷雾能拨开一片新地方就很开心。 Weekend Tour: San Diego! 路上世界迷雾一度变成了墨西哥🇲🇽，我还天真的以为我可">
@@ -180,10 +182,84 @@
 <p>甲板上陈列了很多飞机，但是实在是对这类展览不敢兴趣，匆匆扫一眼就去看了“胜利之吻”的雕塑。</p>
 <p>从甲板看雕塑：<br><img src="/assets/blogImg/pg4/embrace.jpg" width="450px"></p>
 <p>周末过于短暂，而SD其实还有很多有趣的地方，期待再会！</p>
+<hr>
 <p><strong>Tech: Weekly Achievement</strong></p>
 <p>本周已经是实习的第四周，实习将近过半，算是一个里程碑啦。尽管Sol在回来之后又因为感冒缺席了好几天，我还是终于第一次merge到了master（大概是有5个到<code>game_server</code>，另外3个到<code>webapps/px</code>）！以及第一次自己deploy code到了production！！撒花！🎉</p>
 <p><img src="/assets/blogImg/pg4/commits.png" width="600px"></p>
-<p><strong>TO BE CONTINUED …</strong></p>
+<p>第一次在master的code上看到自己的commit还是有点小激动！！（还是太年轻哈哈）过程中还是学到了不少东西，有很多很细节的地方都是第一次碰到，列举如下也算是一部分成就的记录：</p>
+<ul>
+<li>在做ticket的过程中有碰到一些需要log的参数个数有变化的情况，因为不熟悉python一开始在Sol的指导下用了<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">param = value if condition else None</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>但是在有多个<code>param</code>的情况下会显得很累赘，于是可以用<code>kwargs</code>来使代码更精简：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">kwargs = dict()</span><br><span class="line"></span><br><span class="line">if condition:</span><br><span class="line">	kwargs.update(dict(</span><br><span class="line">		...</span><br><span class="line">	))</span><br><span class="line"></span><br><span class="line">function(..., **kwargs)</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li><code>.js</code>和<code>.html</code>末尾都要有new line</li>
+</ul>
+<p>以及本周重温了一下什么是<code>transaction</code>，学习了<code>SearchAPI</code>和<code>Datastore Indexes</code></p>
+<p>四周内到目前为止完成了6个比较小的ticket，分别是</p>
+<ol>
+<li><p>Primarch Troops Add / Remove Tool</p>
+</li>
+<li><p>Garrisoned Troops Add / Remove Tool</p>
+</li>
+<li><p>Rider Gear “Add all piece” button</p>
+</li>
+<li><p>World Infrastructure Expedite Logging (<code>k_id</code>, <code>cont_idx</code>, <code>building_type</code>, <code>region_id</code>)</p>
+</li>
+<li><p>Add / Remove in-game message for rider gear</p>
+</li>
+<li><p>Admin remove vs. client salvage in rider gear salvage log</p>
+</li>
+</ol>
+<p><img src="/assets/blogImg/pg4/salvage.png" width="550px"></p>
+<p>通过这些对整个code base有了更进一步的了解：</p>
+<ul>
+<li><p><code>webapps</code>其中有很多的app，PX Tool其实只是其中一个，游戏里面的一些所需的webapp也包含在其中</p>
+</li>
+<li><p>通过zoezheng的URL访问的是我自己的webapp版本，区分于真正的production版本，同样的，真正的server是default版本，如果有需要调用一些特定的server函数就需要用到我自己的zoezheng server（比如in-game message的ticket，需要调用server的函数来向用户发送消息，这个bug的测试是不能通过SMR来体现的）；其他的ticket比如是troops modification这种，改变会体现在SMR上，所以即便是使用default的server也没关系</p>
+</li>
+<li><p>一般玩家或者admin对账号做了改变之后都需要进行log，admin的改变有一个统一的<code>PXCredit</code> event来完成log，其余的都是玩家在游戏中的改变</p>
+</li>
+<li><p>Admin的改变和玩家在游戏中的改变最后完成的路径是不一样的：</p>
+<ul>
+<li>Admin的改变会直接改变SMR，然后直接对内容进行修改，然后直接调用函数进行log</li>
+<li>Client自己的改变会成为一个<code>action</code>，然后对于每个<code>action</code>来说都要进行validation，通过之后要更新log的话需要有一个<code>UpdateLogTask</code>，我们在GAE中有很多的Task Queue，每个Queue会针对Task调用对应的<code>TaskHandler</code></li>
+</ul>
+</li>
+<li><p><code>TaskHandler</code> vs. <code>CommonRequestHandler</code>: 都是从<code>RequestHandler</code>继承来，区别是</p>
+<ul>
+<li><code>TaskHandler</code>会enqueue task，然后task queue根据task再调用对应handler</li>
+<li><code>CommonRequestHandler</code>没有queue，直接对request handle</li>
+</ul>
+</li>
+<li><p>Task Queue的enqueue transactionally vs. non_transactionally<br>  首先一个<code>Transaction</code>里的所有task是要么都不执行要么都执行，所以如果有些task是严格绑定的（比如玩家battle完之后troops的更新），那么一定要用enqueue transactionally，否则会有致命的错误。当然transactionally的缺点就是费时间，所以如果可以确定一个task可以被执行多次的话可以不用transaction<br>  同时要注意不能够有<code>nested transaction</code>，因为内部的transaction是独立的，不会因为外部的执行失败了就不执行</p>
+</li>
+</ul>
+<hr>
+<p><strong>Master of Git(fake</strong></p>
+<p>在merge到master过程中遇到很多git的问题，自从知道了git是什么之后就一直对master这个branch心怀敬畏，没有自信不敢盲目<code>git checkout master</code>哈哈哈。</p>
+<p>这周在Sol的指导下暴力解决了很多git的问题，用到了很多了解但是不理解的命令</p>
+<ul>
+<li><code>git cherry-pick</code> 可以挑选自己想要的commits到当前的branch上，并且在连续的commits只要用<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git cherry-pick begin-hash..end-hash</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>就可以全部pick起来了，我用到的原因是失误操作多了很多不必要的重复commit</p>
+<ul>
+<li><p><code>git rebase -i HEAD~number</code> interactive rebase可以修改commit的内容，可以合并commit也可以drop commit，只需要配合<code>git push --force</code>使用，但是force flag感觉真的很暴力</p>
+</li>
+<li><p><code>git rebase master</code> 原来就是用来更新当前的branch落后于master的绝佳道具！（之前用<code>git merge master</code>是我傻）。不过有一个问题就是rebase之后会有新的commit需要上传到当前的branch，但是如果已经在pull request的话其实这些更新的commit是不应该显示在pull request里面的，于是这时候就有</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">git checkout master</span><br><span class="line">git fetch</span><br><span class="line">git pull</span><br><span class="line">git checkout your-branch</span><br><span class="line">git rebase master</span><br><span class="line">git push --force</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>GitHub真的是个非常神奇但是无敌有用的工具啊！（在成为Master of Git的路上越走越远</p>
+<hr>
+<p><strong>Welcome Dinner: West of Pecos</strong></p>
+<p>本周来了四个intern，只能说是每个人都有自己的显著特点吧，终于等人齐了吃了welcome dinner，因为主办的people ops太热情，所以即使觉得食物不好吃也会跟他们说很好吃，fake a smile and nod for “delicious food” :) 我选中餐😂</p>
+<p>虽然食物不喜欢但是不得不说就是这些活动和他们的热情让我kind of觉得自己可以融入公司的氛围并且喜欢公司的文化，放张大合照吧</p>
+<p><img src="/assets/blogImg/pg4/peco_all.png" width="550px"></p>
+<hr>
+<p>旅程过半，下周开始任务艰巨，因为需要走整个TDD的流程，要用到更多的知识。希望自己能够胜任，如果有余力，希望能够高效完成吧！</p>
+<p>最最后，好好刷题坚持早起！⏰</p>
 
       
 
