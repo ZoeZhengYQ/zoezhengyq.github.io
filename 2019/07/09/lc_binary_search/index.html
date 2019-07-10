@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="ZoeZheng Blog">
 <meta property="og:description" content="一般在Sorted Array的查找问题中我们都要想到用Binary Search，因为时间复杂度可以降为O(log n)。BS的框架也非常简单，举个栗子🌰： Given a target and a sorted array, find the position of target:123456789101112131415public int findPosition(int[] nums,">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-10T06:11:43.884Z">
+<meta property="og:updated_time" content="2019-07-10T07:16:32.096Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Binary Search的变形">
 <meta name="twitter:description" content="一般在Sorted Array的查找问题中我们都要想到用Binary Search，因为时间复杂度可以降为O(log n)。BS的框架也非常简单，举个栗子🌰： Given a target and a sorted array, find the position of target:123456789101112131415public int findPosition(int[] nums,">
@@ -166,19 +166,7 @@
 <p><a href="https://leetcode.com/problems/search-in-rotated-sorted-array/" target="_blank" rel="noopener">33. Search in Rotated Sorted Array</a></p>
 <p>题目摘抄如下：</p>
 <blockquote>
-<p>Suppose an array sorted in ascending order is rotated at some pivot unknown to you beforehand.</p>
-</blockquote>
-<blockquote>
-<p>(i.e., <code>[0,1,2,4,5,6,7]</code> might become <code>[4,5,6,7,0,1,2]</code>).</p>
-</blockquote>
-<blockquote>
-<p>You are given a target value to search. If found in the array return its index, otherwise return -1.</p>
-</blockquote>
-<blockquote>
-<p>You may assume no duplicate exists in the array.</p>
-</blockquote>
-<blockquote>
-<p>Your algorithm’s runtime complexity must be in the order of <code>O(log n)</code>.</p>
+<p>Suppose an array sorted in ascending order is rotated at some pivot unknown to you beforehand.<br>(i.e., <code>[0,1,2,4,5,6,7]</code> might become <code>[4,5,6,7,0,1,2]</code>).<br>You are given a target value to search. If found in the array return its index, otherwise return -1.<br>You may assume no duplicate exists in the array.<br>Your algorithm’s runtime complexity must be in the order of <code>O(log n)</code>.</p>
 </blockquote>
 <p>讲真我刚拿到这道题的时候真的想到了离散傅立叶变换哈哈哈哈对不起。<br>这题因为也是sorted，所以我们的关键就是利用取余来模拟这个rotation。关键就是要找出最小的数字，才能知道我们究竟rotate了多少个位置。</p>
 <p>代码中<code>start</code>, <code>end</code>, <code>mid</code>模拟的是没有rotate的情况，17行的<code>realMid</code>是指<code>mid</code>在rotate之后的位置，因为我们只需要<code>realMid</code>来判断应该选左边还是右边。</p>
