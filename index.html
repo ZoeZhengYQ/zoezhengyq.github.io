@@ -134,6 +134,82 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-tenth_week_pg_20190810" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/08/10/tenth_week_pg_20190810/">Thank you, Pocket Gems</a>
+    </h1>
+  
+
+        
+        <a href="/2019/08/10/tenth_week_pg_20190810/" class="archive-article-date">
+  	<time datetime="2019-08-10T07:02:48.864Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-10</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>终于还是结束了实习，晚上点开收藏列表里所有的页面，没有一个能打开，恍惚间觉得一切都是梦，再也没有zoezheng的邮箱，再也不能access Github的game_server和webapps，JIRA里面自己做过的tickets也打不开，再也不能跑到px tool里面给自己加金币，Slack也不能登陆。唯一有痕迹的应该就是我的github还链接到了pocketgems。10周真的很自在快乐，就和朋友圈发的一样，我会怀念SF city的繁忙，会怀念早上定上3个闹钟起床看着transit赶BART下班悠闲坐Muni的日子。</p>
+        
+          <a class="article-more-a" href="/2019/08/10/tenth_week_pg_20190810/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Gemmer</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/08/10/tenth_week_pg_20190810/">full text >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-nineth_week_pg_20190802" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -819,92 +895,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2019/06/21/third_week_pg_20190621/">full text >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-lc_10" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/06/19/lc_10/">Regular Expression Matching</a>
-    </h1>
-  
-
-        
-        <a href="/2019/06/19/lc_10/" class="archive-article-date">
-  	<time datetime="2019-06-20T05:46:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-19</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>刷利口最害怕刷到的就是Dynamic Programming的问题，因为永远都是hard而且每一次都想不出来。可用DP解决的问题都是可以化解为各个有Overlap的子问题（区别于Divide and Conquer）。</p>
-<p>今天遇到的是<a href="https://leetcode.com/problems/regular-expression-matching/" target="_blank" rel="noopener">Regular Expression Matching</a>，给定一个string和一个正则表达式，判断二者是否符合。题目摘抄如下：</p>
-<hr>
-<p>Given an input string (<code>s</code>) and a pattern (<code>p</code>), implement regular expression matching with support for <code>&#39;.&#39;</code> and <code>&#39;*&#39;</code> .</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&apos;.&apos; Matches any single character.</span><br><span class="line">&apos;*&apos; Matches zero or more of the preceding element.</span><br><span class="line">The matching should cover the entire input string (not partial).</span><br></pre></td></tr></table></figure>
-<p>Note:</p>
-<ul>
-<li><code>s</code> could be empty and contains only lowercase letters <code>a-z</code>.</li>
-<li><code>p</code> could be empty and contains only lowercase letters <code>a-z</code>, and characters like <code>.</code> or <code>*</code>.</li>
-</ul>
-<hr>
-        
-          <a class="article-more-a" href="/2019/06/19/lc_10/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Leetcode</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/06/19/lc_10/">full text >></a>
         </p>
       
 
