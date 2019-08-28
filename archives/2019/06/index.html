@@ -32,52 +32,9 @@
 
   
 
-  <script src="https://cdn.jsdelivr.net/npm/live2d-widget@3.x/lib/L2Dwidget.min.js"></script>
-  <script type="text/javascript">
-    L2Dwidget.init({
-      model: {
-        jsonPath: '/./node_modules/live2d-widget-model-wanko/assets/wanko.model.json',
-        scale: 1,
-        hHeadPos: 0.5,
-        vHeadPos: 0.618,
-        myDefine: []
-      },
-      display: {
-        superSample: 2,
-        width: 100,
-        height: 200,
-        position: 'right',
-        hOffset: 0,
-        vOffset: -20
-      },
-        mobile: {
-        show: true,
-        scale: 0.5,
-        motion: true
-      },
-      name: {
-        canvas: 'live2dcanvas',
-        div: 'live2d-widget'
-      },
-      react: {
-        opacityDefault: 0.7,
-        opacityOnHover: 0.2
-      },
-      dev: {
-        log: false,
-        border: false,
-        mouseLog: false
-      }
-    });
-  </script>
 </head>
 </html>
 <body>
-  <div id="live2d-widget">
-    <canvas id="live2dcanvas" width="300" height="600" style="position: fixed; opacity: 0.7; 
-      right: 0px; bottom: -20px; z-index: 99999; pointer-events: none; border: 1px dashed rgb(204, 204, 204);">
-    </canvas>
-  </div>
   <div id="container" q-class="show:isCtnShow">
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
     <div class="left-col" q-class="show:isShow">
@@ -721,5 +678,5 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
 
 </div>
   </div>
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":150,"height":300,"hOffset":200,"vOffset":-100},"mobile":{"show":false},"log":false,"tagMode":false});</script></body>
 </html>
