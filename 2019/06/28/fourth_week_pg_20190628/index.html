@@ -45,9 +45,52 @@
 
   
 
+  <script src="https://cdn.jsdelivr.net/npm/live2d-widget@3.x/lib/L2Dwidget.min.js"></script>
+  <script type="text/javascript">
+    L2Dwidget.init({
+      model: {
+        jsonPath: '/./node_modules/live2d-widget-model-wanko/assets/wanko.model.json',
+        scale: 1,
+        hHeadPos: 0.5,
+        vHeadPos: 0.618,
+        myDefine: []
+      },
+      display: {
+        superSample: 2,
+        width: 100,
+        height: 200,
+        position: 'right',
+        hOffset: 0,
+        vOffset: -20
+      },
+        mobile: {
+        show: true,
+        scale: 0.5,
+        motion: true
+      },
+      name: {
+        canvas: 'live2dcanvas',
+        div: 'live2d-widget'
+      },
+      react: {
+        opacityDefault: 0.7,
+        opacityOnHover: 0.2
+      },
+      dev: {
+        log: false,
+        border: false,
+        mouseLog: false
+      }
+    });
+  </script>
 </head>
 </html>
 <body>
+  <div id="live2d-widget">
+    <canvas id="live2dcanvas" width="300" height="600" style="position: fixed; opacity: 0.7; 
+      right: 0px; bottom: -20px; z-index: 99999; pointer-events: none; border: 1px dashed rgb(204, 204, 204);">
+    </canvas>
+  </div>
   <div id="container" q-class="show:isCtnShow">
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
     <div class="left-col" q-class="show:isShow">
@@ -71,8 +114,6 @@
 				<li><a href="/">home</a></li>
 	        
 				<li><a href="/archives">archives</a></li>
-	        
-				<li><a href="/categories">categories</a></li>
 	        
 			</ul>
 		</nav>
@@ -128,8 +169,6 @@
 			
 				
 			
-				
-			
 			
 			
 			<nav class="header-nav">
@@ -145,14 +184,12 @@
 			</nav>
 
 			<nav class="header-menu js-header-menu">
-				<ul style="width: 70%">
+				<ul style="width: 50%">
 				
 				
-					<li style="width: 33.333333333333336%"><a href="/">home</a></li>
+					<li style="width: 50%"><a href="/">home</a></li>
 		        
-					<li style="width: 33.333333333333336%"><a href="/archives">archives</a></li>
-		        
-					<li style="width: 33.333333333333336%"><a href="/categories">categories</a></li>
+					<li style="width: 50%"><a href="/archives">archives</a></li>
 		        
 				</ul>
 			</nav>
