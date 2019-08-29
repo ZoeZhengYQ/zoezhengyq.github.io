@@ -217,10 +217,10 @@
 <li>除此之外还有一大堆我没见过的jargon，有什么<code>npm</code>，<code>pip</code>，<code>pylint</code>，<code>pep8</code>等等，反正我真是一个都没见过。</li>
 </ul>
 <p>Setup的流程挺复杂的，因为有很多依赖，为了简便，他们开发了一个集setup，deploy，configure等功能于一体的工具<code>SpoonfulOfSugar</code>（sfos），于是现在只需要在terminal打上</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sfos webapp.setup</span><br></pre></td></tr></table></figure>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sfos webapp.<span class="built_in">setup</span></span><br></pre></td></tr></table></figure>
 <p>就能省去一大部分的git clone命令以及安装配置了。整个setup的过程大概持续了两天。</p>
 <p>之后就开始了解我的第一个任务First Ticket，大概就是在我们admin tool上加上一个可以让我们增加或者减少玩家troops数量的按钮，是个full stack的小任务。截止周五已经在mentor的帮助下完成了game service的部分，通过以下语句实现给特定的玩家增加一定数量的troops：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">AddTroopsAPI().do_post(drake_id, cont_id, num_troops, pgid)</span><br></pre></td></tr></table></figure>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">AddTroopsAPI</span><span class="params">()</span></span>.do_post(drake_id, cont_id, num_troops, pgid)</span><br></pre></td></tr></table></figure>
 <p>期间最大的问题是</p>
 <ol>
 <li>对Python不熟悉，Pycharm用的不熟练</li>
@@ -415,7 +415,7 @@ gitalk.render('gitalk-container')
   </div>
 </footer>
 
-<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
   
     </div>
     <script>

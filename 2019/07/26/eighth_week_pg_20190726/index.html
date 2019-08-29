@@ -187,7 +187,7 @@
 <p>Me @ hillsdale Caltrain Station:<br><img src="/assets/blogImg/pg8/hillsdale.jpg" width="350px"></p>
 <p><strong>Tech: Weekly Achievement</strong></p>
 <p>上周完成MapReduce代码的时候其实就是在参考一些相关的reference+上网搜，所以其实写完了心里非常没底。一直有bug而且不太确定怎么写unittest所以就一直没动手。这周在Sol的帮助下慢慢读懂了unittest的代码，于是自己尝试着写了一些。结果就一直卡在unittest里面MapReduce不能正常跑的情况，慢慢摸索下也学到了一些新的东西。</p>
-<p>一个是unittest里面的<code>mock</code>，还有里面的<code>patch</code>。因为在unittest的时候其实是自己的一个test environment，像对GCS的访问之类的其实只是一种mock，有时候就需要用到patch来强制某个变量的值或者是某个函数的返回值。我的上述错误就在于因为是测试环境所以Auth没有办法成功，某个函数返回<code>false</code>导致错误，用patch解决了这个问题。但是patch之后不知道为什么函数会多一个输入的param，所以用<code>*args</code>解决。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">from mock import patch</span><br><span class="line">@patch(&apos;shared.Auth.AuthRequestHandler.may_use&apos;, return_value=true)</span><br><span class="line">def test_function(self, *args):</span><br><span class="line">	pass</span><br></pre></td></tr></table></figure></p>
+<p>一个是unittest里面的<code>mock</code>，还有里面的<code>patch</code>。因为在unittest的时候其实是自己的一个test environment，像对GCS的访问之类的其实只是一种mock，有时候就需要用到patch来强制某个变量的值或者是某个函数的返回值。我的上述错误就在于因为是测试环境所以Auth没有办法成功，某个函数返回<code>false</code>导致错误，用patch解决了这个问题。但是patch之后不知道为什么函数会多一个输入的param，所以用<code>*args</code>解决。<br><figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">from mock <span class="keyword">import</span> patch</span><br><span class="line"><span class="variable">@patch</span>(<span class="string">'shared.Auth.AuthRequestHandler.may_use'</span>, return_value=<span class="keyword">true</span>)</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">test_function</span></span>(<span class="keyword">self</span>, *args)<span class="symbol">:</span></span><br><span class="line">	pass</span><br></pre></td></tr></table></figure></p>
 <p>还有就是一直以来对GAE的transaction都一知半解，这几天又了解了一些。<br>transaction就相当于是一堆操作一起执行或者一起不执行，而Task的<code>enqueue_transactionally</code>会在transaction成功之后才enqueue task（并不是把task放在transaction里面）。用transaction一般是对数据的一系列操作，有时候会碰到一次需要写两个entity的情况，比如这次的continent name就需要用到<code>WorldArea</code>和<code>WorldAreaName</code>两个entity，这时候如果不加上<code>xg=True</code>就会有cross error。</p>
 <p>这周效率比较高的主要原因是在解决了上面的bug之后发现我的MapReduce并没有其他恼人的错误，相当于是bug free了，剩下的任务都是在自己能力范围内学习参考能做好的，所以每天就可以很专心的debug（大约是有事情做效率就高）。到此为止Server的代码基本写完，周四周五还写了大部分的前端，用bootstrap和angularjs基本搭出来前端网页了。</p>
 <p><img src="/assets/blogImg/pg8/blacklist_tool.png" width="750px"></p>
@@ -382,7 +382,7 @@ gitalk.render('gitalk-container')
   </div>
 </footer>
 
-<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
   
     </div>
     <script>
