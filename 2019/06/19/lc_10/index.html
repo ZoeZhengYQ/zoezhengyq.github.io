@@ -6,15 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2019/7 | 洋葱国王的短裤</title>
+  <title>Regular Expression Matching | 洋葱国王的短裤</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="洋葱国王的短裤">
-<meta property="og:url" content="http://yoursite.com/archives/2019/07/index.html">
+  <meta name="description" content="刷利口最害怕刷到的就是Dynamic Programming的问题，因为永远都是hard而且每一次都想不出来。可用DP解决的问题都是可以化解为各个有Overlap的子问题（区别于Divide and Conquer）。 今天遇到的是Regular Expression Matching，给定一个string和一个正则表达式，判断二者是否符合。题目摘抄如下：  Given an input stri">
+<meta name="keywords" content="Leetcode">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Regular Expression Matching">
+<meta property="og:url" content="http://yoursite.com/2019/06/19/lc_10/index.html">
 <meta property="og:site_name" content="洋葱国王的短裤">
+<meta property="og:description" content="刷利口最害怕刷到的就是Dynamic Programming的问题，因为永远都是hard而且每一次都想不出来。可用DP解决的问题都是可以化解为各个有Overlap的子问题（区别于Divide and Conquer）。 今天遇到的是Regular Expression Matching，给定一个string和一个正则表达式，判断二者是否符合。题目摘抄如下：  Given an input stri">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="http://yoursite.com/assets/blogImg/leetcode/10_note.jpg">
+<meta property="og:updated_time" content="2019-06-20T06:52:51.995Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="洋葱国王的短裤">
+<meta name="twitter:title" content="Regular Expression Matching">
+<meta name="twitter:description" content="刷利口最害怕刷到的就是Dynamic Programming的问题，因为永远都是hard而且每一次都想不出来。可用DP解决的问题都是可以化解为各个有Overlap的子问题（区别于Divide and Conquer）。 今天遇到的是Regular Expression Matching，给定一个string和一个正则表达式，判断二者是否符合。题目摘抄如下：  Given an input stri">
+<meta name="twitter:image" content="http://yoursite.com/assets/blogImg/leetcode/10_note.jpg">
   
     <link rel="alternative" href="/atom.xml" title="洋葱国王的短裤" type="application/atom+xml">
   
@@ -144,150 +151,66 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-lc_10" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Regular Expression Matching
+    </h1>
+  
+
+        
+        <a href="/2019/06/19/lc_10/" class="archive-article-date">
+  	<time datetime="2019-06-20T02:46:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-19</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>刷利口最害怕刷到的就是Dynamic Programming的问题，因为永远都是hard而且每一次都想不出来。可用DP解决的问题都是可以化解为各个有Overlap的子问题（区别于Divide and Conquer）。</p>
+<p>今天遇到的是<a href="https://leetcode.com/problems/regular-expression-matching/" target="_blank" rel="noopener">Regular Expression Matching</a>，给定一个string和一个正则表达式，判断二者是否符合。题目摘抄如下：</p>
+<hr>
+<p>Given an input string (<code>s</code>) and a pattern (<code>p</code>), implement regular expression matching with support for <code>&#39;.&#39;</code> and <code>&#39;*&#39;</code> .</p>
+<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'.'</span> Matches <span class="keyword">any</span> single <span class="keyword">character</span>.</span><br><span class="line"><span class="string">'*'</span> Matches <span class="literal">zero</span> <span class="keyword">or</span> more <span class="keyword">of</span> <span class="keyword">the</span> preceding <span class="keyword">element</span>.</span><br><span class="line">The matching should cover <span class="keyword">the</span> entire input <span class="keyword">string</span> (<span class="keyword">not</span> partial).</span><br></pre></td></tr></table></figure>
+<p>Note:</p>
+<ul>
+<li><code>s</code> could be empty and contains only lowercase letters <code>a-z</code>.</li>
+<li><code>p</code> could be empty and contains only lowercase letters <code>a-z</code>, and characters like <code>.</code> or <code>*</code>.</li>
+</ul>
+<hr>
+<a id="more"></a>
+<p>Note说明<code>s</code>里面一定都是字母，而<code>p</code>里面一定也是只有字母、<code>.</code>和<code>*</code>，所以我们不需要error handle其他复杂的符号。需要注意的是这种涉及string的问题如果用DP一定要考虑到empty string，因此所需的2D DP矩阵的大小应该是<code>s.length() * p.length()</code>。</p>
+<p>那么需要理解以下几个内容：</p>
+<ol>
+<li><code>a*b</code>: <code>a*</code>可以是有<strong>0个或者多个a</strong>，所以符合的答案有<code>b</code>, <code>ab</code>, <code>aab</code>, <code>aaab</code>…</li>
+<li><code>.*</code>: <code>.</code>代表任意字母，所以<code>.*</code>代表<strong>0个或多个相同的字母</strong></li>
+<li><code>a.b</code>: <code>a</code>和<code>b</code>中间必须<strong>有且只有一个任意字母</strong></li>
+<li><code>a</code>: 只能<strong>有且只有一个<code>a</code></strong>，所以这种情况下<code>aa</code>和<code>ab</code>都是不成立的</li>
+</ol>
+<p>理解了上述概念问题就可以拆分了，直接上图：</p>
+<p><img src="/assets/blogImg/leetcode/10_note.jpg" width="600px"></p>
+
+<p>最后需要注意的是初始化的部分：</p>
+<ol>
+<li><code>DP[0][0]</code>一定是<code>true</code></li>
+<li>第一列，也就是pattern是<code>&quot;&quot;</code>，但是string不为空时，全都是<code>false</code></li>
+<li>第一行，代表string是<code>&quot;&quot;</code>，取决于pattern，例如当pattern是<code>a*s*c*e*</code>这种，那么应当是<code>true</code>的，所以我们可以写为<br>当当前pattern为<code>*</code>，我们取决于当前位置的前两个位置的结果，详见code。</li>
+</ol>
+<p>最后附上code（Java）：<br>注意code中的T就是上述DP的矩阵。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="comment">// Buttom up DP solution</span></span><br><span class="line">    <span class="comment">// One more row and col to represent empty s and p</span></span><br><span class="line">    <span class="comment">// Time: O(mn)</span></span><br><span class="line">    <span class="comment">// Space: O(mn)</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isMatch</span><span class="params">(String s, String p)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> sLen = s.length();</span><br><span class="line">        <span class="keyword">int</span> pLen = p.length();</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// Do not need to initialize false</span></span><br><span class="line">        <span class="keyword">boolean</span>[][] T = <span class="keyword">new</span> <span class="keyword">boolean</span>[sLen+<span class="number">1</span>][pLen+<span class="number">1</span>];</span><br><span class="line">        T[<span class="number">0</span>][<span class="number">0</span>] = <span class="keyword">true</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 注意这个初始化，是s为""，看pattern是否满足</span></span><br><span class="line">        <span class="comment">// 如果是a*b*c*的形式就都是满足的</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; pLen; ++j) &#123;</span><br><span class="line">            <span class="keyword">if</span> (p.charAt(j) == <span class="string">'*'</span>) &#123;</span><br><span class="line">                T[<span class="number">0</span>][j+<span class="number">1</span>] = T[<span class="number">0</span>][j-<span class="number">1</span>];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; sLen; ++i) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; pLen; ++j) &#123;</span><br><span class="line">                <span class="comment">// Same char or pattern is '.'</span></span><br><span class="line">                <span class="keyword">if</span> (p.charAt(j) == s.charAt(i) || p.charAt(j) == <span class="string">'.'</span>) &#123;</span><br><span class="line">                    T[i+<span class="number">1</span>][j+<span class="number">1</span>] = T[i][j];</span><br><span class="line">                    <span class="keyword">continue</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="comment">// Pattern is '*'</span></span><br><span class="line">                <span class="keyword">if</span> (p.charAt(j) == <span class="string">'*'</span>) &#123;</span><br><span class="line">                    <span class="comment">// 0 occurance</span></span><br><span class="line">                    <span class="keyword">if</span> (j &gt;= <span class="number">2</span> &amp;&amp; T[i+<span class="number">1</span>][j-<span class="number">1</span>]) &#123;</span><br><span class="line">                        T[i+<span class="number">1</span>][j+<span class="number">1</span>] = T[i+<span class="number">1</span>][j-<span class="number">1</span>];</span><br><span class="line">                        <span class="comment">// System.out.println("i:" + i + " j:" + j + " 0 occur");</span></span><br><span class="line">                        <span class="keyword">continue</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="comment">// Check if current char in s is the same as </span></span><br><span class="line">                    <span class="comment">// the previous char in pattern</span></span><br><span class="line">                    <span class="keyword">if</span> (s.charAt(i) == p.charAt(j-<span class="number">1</span>) || p.charAt(j-<span class="number">1</span>) == <span class="string">'.'</span>) &#123;</span><br><span class="line">                        T[i+<span class="number">1</span>][j+<span class="number">1</span>] = T[i][j+<span class="number">1</span>];</span><br><span class="line">                        <span class="comment">// System.out.println("i:" + i + " j:" + j + " other");</span></span><br><span class="line">                        <span class="keyword">continue</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125; </span><br><span class="line">                T[i+<span class="number">1</span>][j+<span class="number">1</span>] = <span class="keyword">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> T[sLen][pLen];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<hr>
+<p>优化：我们可以看到其实我们只需要用到当前一行和上一行的数据，所以其实可以只保留两行，但是代码部分可能稍微有些麻烦，判断条件会多些，所以没有进行尝试。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/07/26/eighth_week_pg_20190726/" class="archive-article-date">
-  	<time datetime="2019-07-27T02:43:23.449Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-26</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/07/26/eighth_week_pg_20190726/">在pocketgems的第八周</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Gemmer</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/07/20/seventh_week_pg_20190720/" class="archive-article-date">
-  	<time datetime="2019-07-21T03:28:49.369Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-20</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/07/20/seventh_week_pg_20190720/">在pocketgems的第七周</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Gemmer</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/07/12/sixth_week_pg_20190712/" class="archive-article-date">
-  	<time datetime="2019-07-13T02:05:07.199Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-12</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/07/12/sixth_week_pg_20190712/">在pocketgems的第六周</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Gemmer</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/07/10/lc_binary_search/" class="archive-article-date">
-  	<time datetime="2019-07-10T05:26:07.967Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-10</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/07/10/lc_binary_search/">Binary Search的变形</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -299,58 +222,148 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/06/19/lc_10/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/07/04/fifth_week_pg_20190702/" class="archive-article-date">
-  	<time datetime="2019-07-04T17:08:20.947Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-04</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2019/06/21/third_week_pg_20190621/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          在Pocket Gems的第三周
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/06/14/second_week_pg_201906014/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">在Pocket Gems的第二周</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/07/04/fifth_week_pg_20190702/">在Pocket Gems的第五周</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Gemmer</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    没有目录，将就看吧 :)
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
   
-    </div></section>
   
 
-    
+  
 
+  
+  
+  
+    <div id="gitalk-container" style="padding: 0px 30px 0px 30px;"></div> 
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script type="text/javascript">
+
+if(true){
+	var gitalk = new Gitalk({
+  	clientID: 'ac85e4254f868614085e',
+  	clientSecret: 'c627cb3bf91c740e4f018038835ad4676c488b54',
+  	repo: 'zoeecomments',
+  	owner: 'ZoeZhengYQ',
+  	admin: ['ZoeZhengYQ'],
+  	id: 'Wed Jun 19 2019 22:46:00 GMT-0400',
+  	distractionFreeMode: 'true'
+})
+gitalk.render('gitalk-container') 
+}
+</script>
+  
 
           </div>
         </div>
@@ -378,8 +391,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
