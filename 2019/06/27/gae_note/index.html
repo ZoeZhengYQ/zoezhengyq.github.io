@@ -21,8 +21,6 @@
 <meta name="twitter:title" content="GAE学习笔记（一） Search API">
 <meta name="twitter:description" content="因为公司的所有webapp都是放在Google App Engine(GAE)上面的，所以自然而然的就需要学习。 Search API Overview Search API可以对数据进行类似标号的操作，所以我们可以通过Search API查找Datastore我们需要的数据。 数据存储的形式是我们首要了解的概念(我放弃用中文做这篇笔记的打算了，因为理解英语已经很难了:) ，翻译成中文简直太为难我">
   
-    <link rel="alternative" href="/atom.xml" title="洋葱国王的短裤" type="application/atom+xml">
-  
   
     <link rel="icon" href="https://www.shareicon.net/data/512x512/2016/08/05/807310_gaming_512x512.png">
   
@@ -37,6 +35,7 @@
 
   
 
+<link rel="alternate" href="/atom.xml" title="洋葱国王的短裤" type="application/atom+xml">
 </head>
 </html>
 <body>
@@ -86,6 +85,8 @@
 		        
 					<a class="linkedin" target="_blank" href="https://www.linkedin.com/in/yingqiao-zheng/" title="linkedin"><i class="icon-linkedin"></i></a>
 		        
+					<a class="rss" target="_blank" href="/atom.xml" title="rss"><i class="icon-rss"></i></a>
+		        
 			</div>
 		</nav>
 	</header>		
@@ -124,6 +125,8 @@
 						<a class="github" target="_blank" href="https://github.com/ZoeZhengYQ" title="github"><i class="icon-github"></i></a>
 			        
 						<a class="linkedin" target="_blank" href="https://www.linkedin.com/in/yingqiao-zheng/" title="linkedin"><i class="icon-linkedin"></i></a>
+			        
+						<a class="rss" target="_blank" href="/atom.xml" title="rss"><i class="icon-rss"></i></a>
 			        
 				</div>
 			</nav>
@@ -217,7 +220,7 @@
 <p><strong>Creating a document</strong><br><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">document</span> = search.Ducument(</span><br><span class="line">	doc_id = <span class="string">'...'</span>;</span><br><span class="line">	<span class="attribute">f</span><span class="attribute">i</span><span class="attribute">e</span><span class="attribute">l</span><span class="attribute">d</span><span class="attribute">s</span>=[</span><br><span class="line">		search.TextField(name=<span class="string">'name1'</span>, value=<span class="string">'value1'</span>),</span><br><span class="line">		search.HtmlField(name=<span class="string">'name2'</span>, value=<span class="string">'value2'</span>),</span><br><span class="line">		...</span><br><span class="line">	])</span><br></pre></td></tr></table></figure></p>
 <hr>
 <p><strong>Working with index</strong></p>
-<p>Put document into index:<br><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">index</span> = <span class="built_in">search</span>.Index(id)</span><br><span class="line"><span class="built_in">index</span>.<span class="keyword">put</span>(document)</span><br></pre></td></tr></table></figure></p>
+<p>Put document into index:<br><figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">index</span> = <span class="keyword">search</span>.<span class="keyword">Index</span>(id)</span><br><span class="line"><span class="keyword">index</span>.put(document)</span><br></pre></td></tr></table></figure></p>
 <p>其他不写了！文档里面都很全！参考<a href="https://cloud.google.com/appengine/docs/standard/python/search/?authuser=1" target="_blank" rel="noopener">Documents and Indexes | Google App Engine</a></p>
 
       
@@ -474,11 +477,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">年终废话</a>
+                <a href="javascript:void(0)" class="js-tag color3">日常</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">日常</a>
+                <a href="javascript:void(0)" class="js-tag color4">分割线</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -486,15 +489,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">找工碎碎念</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Code Monkey University</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Leetcode</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -506,7 +501,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">分割线</a>
+                <a href="javascript:void(0)" class="js-tag color4">Leetcode</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">找工碎碎念</a>
               </li>
             
             <div class="clearfix"></div>
