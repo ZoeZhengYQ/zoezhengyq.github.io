@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>迪士尼在逃公主👸</title>
+  <title>主人太懒什么都没有留下</title>
   
   <subtitle>专业写bug | 副业debug | 本命皮卡丘 | Bag End Addicted</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://zoezhengyq.github.io/"/>
-  <updated>2020-05-27T05:46:23.959Z</updated>
+  <updated>2020-11-25T19:20:24.000Z</updated>
   <id>https://zoezhengyq.github.io/</id>
   
   <author>
@@ -17,9 +17,30 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>New life</title>
+    <link href="https://zoezhengyq.github.io/2020/11/25/summary_20201008/"/>
+    <id>https://zoezhengyq.github.io/2020/11/25/summary_20201008/</id>
+    <published>2020-11-25T19:18:32.000Z</published>
+    <updated>2020-11-25T19:20:24.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>好久没写点啥了，搬到SF的4个月里有无数次想要记录点什么的冲动，最后都因为懒惰不了了之。主要原因还是生活里没有什么起伏，没买车的时候生活除了上班就是吃饭睡觉，SF是个无比熟悉的地方，没有什么新鲜事儿可以记录。</p><a id="more"></a>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;好久没写点啥了，搬到SF的4个月里有无数次想要记录点什么的冲动，最后都因为懒惰不了了之。主要原因还是生活里没有什么起伏，没买车的时候生活除了上班就是吃饭睡觉，SF是个无比熟悉的地方，没有什么新鲜事儿可以记录。&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="日常" scheme="https://zoezhengyq.github.io/tags/%E6%97%A5%E5%B8%B8/"/>
+    
+  </entry>
+  
+  <entry>
     <title>----学生时代分割线----</title>
-    <link href="https://zoezhengyq.github.io/2020/05/27/end_of_student_time_20200510/"/>
-    <id>https://zoezhengyq.github.io/2020/05/27/end_of_student_time_20200510/</id>
+    <link href="https://zoezhengyq.github.io/2020/05/26/end_of_student_time_20200510/"/>
+    <id>https://zoezhengyq.github.io/2020/05/26/end_of_student_time_20200510/</id>
     <published>2020-05-27T05:13:51.000Z</published>
     <updated>2020-05-27T05:46:23.959Z</updated>
     
@@ -85,8 +106,8 @@
   
   <entry>
     <title>不开心 :&#39;(</title>
-    <link href="https://zoezhengyq.github.io/2019/10/10/daily_20191010/"/>
-    <id>https://zoezhengyq.github.io/2019/10/10/daily_20191010/</id>
+    <link href="https://zoezhengyq.github.io/2019/10/09/daily_20191010/"/>
+    <id>https://zoezhengyq.github.io/2019/10/09/daily_20191010/</id>
     <published>2019-10-10T05:34:27.174Z</published>
     <updated>2019-11-10T01:16:11.441Z</updated>
     
@@ -109,8 +130,8 @@
   
   <entry>
     <title>19 Fall 第一天</title>
-    <link href="https://zoezhengyq.github.io/2019/09/22/first_day_19_fall_08262019/"/>
-    <id>https://zoezhengyq.github.io/2019/09/22/first_day_19_fall_08262019/</id>
+    <link href="https://zoezhengyq.github.io/2019/09/21/first_day_19_fall_08262019/"/>
+    <id>https://zoezhengyq.github.io/2019/09/21/first_day_19_fall_08262019/</id>
     <published>2019-09-22T04:14:34.959Z</published>
     <updated>2019-11-10T01:15:07.302Z</updated>
     
@@ -265,8 +286,8 @@
   
   <entry>
     <title>Binary Search的变形</title>
-    <link href="https://zoezhengyq.github.io/2019/07/10/lc_binary_search/"/>
-    <id>https://zoezhengyq.github.io/2019/07/10/lc_binary_search/</id>
+    <link href="https://zoezhengyq.github.io/2019/07/09/lc_binary_search/"/>
+    <id>https://zoezhengyq.github.io/2019/07/09/lc_binary_search/</id>
     <published>2019-07-10T05:26:07.967Z</published>
     <updated>2019-07-10T07:40:40.135Z</updated>
     
@@ -474,27 +495,6 @@
     
     
       <category term="Gemmer" scheme="https://zoezhengyq.github.io/tags/Gemmer/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>机上小记</title>
-    <link href="https://zoezhengyq.github.io/2019/06/01/mix_06012019/"/>
-    <id>https://zoezhengyq.github.io/2019/06/01/mix_06012019/</id>
-    <published>2019-06-01T17:32:00.000Z</published>
-    <updated>2019-06-01T07:21:02.885Z</updated>
-    
-    <content type="html"><![CDATA[<p>此时此刻正在去往San Francisco的UA862航班上，飞行时间还有10个多小时，挺精神的，脑海里不断重演这两周回国的经历，就拿出电脑敲点啥，毕竟刚刚建立了blog（这一定又是图新鲜）。其实一有想要写文字的感觉就会深刻认识到自己文字功底的匮乏，虽说心里时常有些特别的感受，但往往难以用言语表达出来。文字幼稚归幼稚，自己看看图个乐呵。</p><a id="more"></a><p><strong>时间</strong></p><p>想到回国的经历，一方面就是感觉到时间的流逝📅，小学时候写作文总是说时间是指缝的流沙，转瞬即逝，但那只是个俗套的比喻，我内心是没有实感的。现在不同了，总是觉得很多情景和情绪历历在目，甚至是当下的感受还很容易代入的时候，发现时间单位再也不是我们习惯的“天”。回家两周，吃吃喝喝放纵慵懒，两周时间结束，这里是“周”。坐在飞机上，回想着自己第一次到美国，也是去的SF，再一想一年前刚来美国读MS，CMU再难熬的日子也过去了1/3，这里是“年”。</p><p>回家感觉一切都没变（虽然明视眼镜倒闭了），但是又感觉一切都不一样了。爸妈一年一年变老，竟然也到了考虑退休的时候了，见亲人时竟然从第一人称的视角替换为第三人称的熟悉感，表弟竟然也要上大学了，小表妹要上初中了；对本科生活有距离感了，对高中初中同学已经有些许陌生了。广州这地方老样子，还是我喜欢的样子，但我竟然有点不适应使用大众点评查店，出行也没想到共享单车。</p><p><strong>距离</strong></p><p>回家时间只有两周，这两周对我来说就像是在外摔了跤回家爸妈给我涂上红药水。今天在车去往高铁站的路上想，我完全可以当作是以前经历过的无数次上学路。高中的时候是车-地铁-车，本科是车-地铁-飞机-地铁，现在只不过是车-高铁-飞机-车。为什么我还是难过呢，那就是距离。距离的体现有很多，时差、生活习惯……最重要的是我不能仅仅通过电话里的声音或者屏幕里的笑脸排忧解难。和Yiar在咖啡厅聊天的时候就在设想，如果我能瞬移，回CMU上课，不花时间成本就能回家睡觉，压力和抗拒应该要少太多了。</p><p>另外就是文化之间的距离，所有在美国的不适应都能成为我压力的来源，吃不到想吃的菜、4月飞雪、语言不通、缺乏娱乐……</p><p>来美国深造给我实体化了时间和距离，教会我珍惜，珍惜在一起的时光，抓住每个机会去表达爱和感谢。而我其实不擅长表达自己的情感，尤其是在父母亲人面前。我说不出爱，也不曾用实际行动表达过爱。我有无数次在家觉得我都一把年纪了还让爸妈操心这操心那，但我还是没有站起来帮忙做饭刷碗做家务。我也有无数次想到离家就难以自制，但我依然没有跑去告诉爸妈我想他们，我爱他们。直到我妈跟我说觉得我希望我懂得感恩时，我才知道他们其实真的没有感受到。</p><p><strong>家</strong></p><p>家是我永远的软肋，所以离家就是难过情绪的永恒之泉。这点上我没有一点进步，自打本科开始，如果离家这件事在脑海中循环播放，眼泪也会停不下来。我唯一的进步可能就是，藏的更好了一些，让自己看起来更坚强了些，这次回家做到不再因为离家掉眼泪了。说来奇怪，本不是那种喜欢冒险走南闯北的女孩，为什么人生到现在一直往更远的地方跑且一边哭一边觉得不后悔。相比之下我妈可能更没进步（她自认为的太软弱），记得两年前从南京回家，坐地铁到洛溪站，刚探出头就看到妈妈掉眼泪。每个离家的夜晚妈妈总会亲一遍我的额头（这是我最难控制的部分）。这次回家更是见面掉眼泪，离家掉眼泪。至于我爸……内敛优雅的男人是不会对女儿流露很多情绪的😄。</p><p>（我去飞机真晃🤮）我觉得我很幸运，爸妈是宠女狂魔，倾尽全力给我最好的一切。爸爸细心，一心一意爱着妈妈和我，即便我们可能没有过多的深入交流（嗯这不是爸爸习惯的方式，也可能不是我的）。妈妈也是恨不得把最好的都给我（愿意把她的美腿给我哈哈哈），最重要的是妈妈虽然是愿意接受和尝试80%的来自我的时代的东西，比如跟着我喜欢皮卡丘（但她的接受不包括抛弃自己原有的想法）。这个家庭已经是完美至极了，就像我妈说的健康平安就行，别的不奢求也不重要。爸妈给我的这个家，造就了我的健全人格，爸妈的支持（虽然不能帮我写作业），成就了我这23年的特别人生。和基友见面的时候谈及纹身，谈及其他所谓的“传统”家庭，视染烫、耳洞、纹身为背离社会传统的象征，而我就差染发没尝试过了。</p><p><strong>许个愿</strong></p><p>上了飞机意味着面对新的未知和挑战，PG是我人生第一份实习，是我美帝学习生活的阶段性总结，也是我的跳板，我想跳得更高些，想要努力在各方面变得更强。许个愿，健康平安，希望实习刷题学习一样不落，找全职顺利！也希望我能一直幸运地受眷顾！首先得努努力倒时差🕒。</p><p>—— 2019儿童节快乐，Zoe，于航班</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;此时此刻正在去往San Francisco的UA862航班上，飞行时间还有10个多小时，挺精神的，脑海里不断重演这两周回国的经历，就拿出电脑敲点啥，毕竟刚刚建立了blog（这一定又是图新鲜）。其实一有想要写文字的感觉就会深刻认识到自己文字功底的匮乏，虽说心里时常有些特别的感受，但往往难以用言语表达出来。文字幼稚归幼稚，自己看看图个乐呵。&lt;/p&gt;
-    
-    </summary>
-    
-    
-    
-      <category term="日常" scheme="https://zoezhengyq.github.io/tags/%E6%97%A5%E5%B8%B8/"/>
     
   </entry>
   
